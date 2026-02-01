@@ -1,0 +1,14 @@
+## systemd/microservice.service
+[Unit]
+Description=Node.js Microservice
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/assignment/microservice/index.js
+WorkingDirectory=/home/assignment/microservice
+Restart=always
+User=assignment
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
